@@ -123,17 +123,6 @@ $selectedTheme = $block->getSelectedTheme();
 <script>
     require(['jquery'], function($) {
         $(document).ready(function() {
-            function showConfigFields(themeCode) {
-                var translationBasicId = 'themedesign_' + themeCode + '_basic_colors';
-                var translationAdvanceId = 'themedesign_' + themeCode + '_advance_colors';
-
-                $('.section-config').hide().first().show();
-                
-                $('#' + translationBasicId).closest('.section-config').show();
-                $('#' + translationAdvanceId).closest('.section-config').show();
-            }
-            
-            $('.section-config').hide().first().show();
             $('#row_themedesign_theme_list_selected_theme').hide();
             var initialSelectedTheme = $('#themedesign_theme_list_selected_theme').val();
             if (initialSelectedTheme) {
@@ -142,7 +131,6 @@ $selectedTheme = $block->getSelectedTheme();
                         $(this).find('.theme-name').append(' <span style="color: #eb5202;">(Selected)</span>');
                     }
                 });
-                showConfigFields(initialSelectedTheme);
             }
             
             $('.theme-item').on('click', function() {
@@ -155,9 +143,7 @@ $selectedTheme = $block->getSelectedTheme();
                 themeName.html(themeName.html() + ' <span style="color: #eb5202;">(Selected)</span>');
 
                 var themeCode = $(this).data('theme-code');
-
-                showConfigFields(themeCode);
-
+                
                 const selectedThemeField = $('#themedesign_theme_list_selected_theme');
                 if (selectedThemeField) {
                     selectedThemeField.val(themeCode);
