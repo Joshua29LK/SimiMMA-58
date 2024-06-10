@@ -88,9 +88,9 @@
             <label>Section Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="status_bar_text_color" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="status_bar_text_color" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Status Bar Text Color</label>
-            <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
+            <source_model>Bss\ThemeDesign\Model\Config\Source\StatusBarTextColor</source_model>
         </field>
         <field id="loading_color" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Loading Color</label>
