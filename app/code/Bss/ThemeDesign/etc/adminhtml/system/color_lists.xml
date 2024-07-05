@@ -1,98 +1,98 @@
 <?xml version="1.0"?>
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
-    <group id="theme_list" translate="label" sortOrder="-100" showInDefault="1" showInWebsite="1" showInStore="1">
+    <group id="theme_list" translate="label" sortOrder="-100" showInDefault="1" showInWebsite="1" showInStore="0">
         <label>Theme Design</label>
-        <field id="stores" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="stores" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\ThemeList</frontend_model>
         </field>
-        <field id="selected_theme" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="selected_theme" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Selected Theme</label>
         </field>
     </group>
     <group id="basic_colors" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
-           showInStore="1">
+           showInStore="0">
         <label>Select Basic colors</label>
-        <field id="key_color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="key_color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Key Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="top_menu_icon_color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="top_menu_icon_color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Top Menu Icon Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="button_background_color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="button_background_color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Button Background Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="button_text_color" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="button_text_color" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Button Text Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="menu_background_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="menu_background_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Menu Background Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="menu_text_color" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="menu_text_color" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Menu Text Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="menu_line_color" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="menu_line_color" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Menu Line Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="menu_icon_color" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="menu_icon_color" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Menu Icon Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
     </group>
     <group id="advance_colors" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
-           showInStore="1">
+           showInStore="0">
         <label>Select Advance colors</label>
-        <field id="search_box_background_color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="search_box_background_color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Search Box Background Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="search_text_color" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="search_text_color" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Search Text Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="app_background_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="app_background_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>App Background Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="content_color" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="content_color" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Content Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="image_border_color" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="image_border_color" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Image Border Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="line_color" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="line_color" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Line Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="price_color" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="price_color" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Price Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="special_price_color" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="special_price_color" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Special Price Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="icon_color" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="icon_color" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Icon Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="section_color" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="section_color" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Section Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
-        <field id="status_bar_text_color" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="status_bar_text_color" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Status Bar Text Color</label>
             <source_model>Bss\ThemeDesign\Model\Config\Source\StatusBarTextColor</source_model>
         </field>
-        <field id="loading_color" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+        <field id="loading_color" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="0">
             <label>Loading Color</label>
             <frontend_model>Bss\ThemeDesign\Block\Adminhtml\System\Config\Form\Field\Color</frontend_model>
         </field>
