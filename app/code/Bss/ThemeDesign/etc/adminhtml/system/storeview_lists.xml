@@ -213,4 +213,14 @@
             <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
         </field>
     </group>
+
+    <group id="language_import_json" translate="label" sortOrder="1000" showInDefault="1" showInWebsite="1" showInStore="0">
+        <label>Import Language by Json</label>
+        <field id="language_file_upload" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="20" showInDefault="1" showInWebsite="1" >
+            <label>Json language file</label>
+            <backend_model>Bss\ThemeDesign\Model\Config\Backend\JsonFileType</backend_model>
+            <upload_dir config="system" scope_info="1">languages</upload_dir>
+            <comment>After upload file please click "Save Config" to start import</comment>
+        </field>
+    </group>
 </include>
