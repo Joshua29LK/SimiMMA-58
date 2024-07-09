@@ -57,9 +57,14 @@ class JsonFileType extends \Magento\Config\Model\Config\Backend\File
                 $fileContents = file_get_contents($filePath);
                 $jsonData = json_decode($fileContents, true);
 
+                $listLanguage = [];
                 if ($jsonData !== null && json_last_error() === JSON_ERROR_NONE) {
                     foreach ($jsonData as $code => $listTranslation) {
+                        $listLanguage[] = $code;
                         $this->saveToConfig($code, $listTranslation);
+                    }
+                    if($listLanguage) {
+                        $this->configWriter->save('languages/translation_list/list', json_encode($listLanguage));
                     }
                     $this->configWriter->save('languages/language_import_json/language_file_upload', "");
                     unlink($filePath);
@@ -75,7 +80,7 @@ class JsonFileType extends \Magento\Config\Model\Config\Backend\File
     public function saveToConfig($code, $listTranslation)
     {
         try {
-            $path = "languages/translation_list_$code/translation_$code";
+            $path = "languages/translation_list/translation_$code";
             $currentValue = $this->_config->getValue($path);
             
             $formattedData = [];

@@ -47,28 +47,28 @@ class AppConfigs extends \Simi\Simiconnector\Model\Api\Apiabstract
         ];
 
         $languagesConfig = [];
-        $languages = ['en_US', 'it_IT', 'nb_NO', 'es_ES', 'zh_CN', 'ru_RU', 'nl_NL',
-            'fr_FR', 'ko_KR', 'th_TH', 'ja_JP', 'pt_BR', 'pt_PT', 'fr_CA', 'ar_SA',
-            'ar_KW', 'ar_MA', 'he_IL', 'es_MX', 'zh_HK', 'zh_TW', 'de_CH', 'sv_SE'];
-
-        foreach ($languages as $languageCode) {
-            $configValue = $this->getStoreConfig("languages/translation_list_$languageCode");
-            if (!empty($configValue)) {
-                $decodedValue = json_decode(reset($configValue), true);
-                if (json_last_error() === JSON_ERROR_NONE) {
-                    $formattedValue = [];
-                    foreach ($decodedValue as $key => $value) {
-                        $formattedValue[$key] = [
-                            'original' => $value['original'],
-                            'translated' => $value['translated']
-                        ];
+        $languages = $this->getStoreConfig("languages/translation_list/list");
+        if($languages) {
+            $languages = json_decode($languages, true);
+            foreach ($languages as $languageCode) {
+                $configValue = $this->getStoreConfig("languages/translation_list/translation_$languageCode");
+                if ($configValue) {
+                    $decodedValue = json_decode($configValue, true);
+                    if (json_last_error() === JSON_ERROR_NONE) {
+                        $formattedValue = [];
+                        foreach ($decodedValue as $key => $value) {
+                            $formattedValue[$key] = [
+                                'original' => $value['original'],
+                                'translated' => $value['translated']
+                            ];
+                        }
+                        $languagesConfig[$languageCode] = $formattedValue;
+                    } else {
+                        $languagesConfig[$languageCode] = [];
                     }
-                    $languagesConfig[$languageCode] = $formattedValue;
                 } else {
                     $languagesConfig[$languageCode] = [];
                 }
-            } else {
-                $languagesConfig[$languageCode] = [];
             }
         }
 
@@ -76,7 +76,7 @@ class AppConfigs extends \Simi\Simiconnector\Model\Api\Apiabstract
             'app-configs' => [
                 [
                     'theme' => $themeConfig,
-                    'languages' => $languagesConfig
+                    'language' => $languagesConfig
                 ]
             ]
         ];

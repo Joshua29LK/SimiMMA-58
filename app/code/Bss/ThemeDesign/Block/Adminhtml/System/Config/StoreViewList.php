@@ -66,7 +66,7 @@ class StoreViewList extends \Magento\Config\Block\System\Config\Form\Field
      */
     public function getInitLanguagesList()
     {
-        $languages = [
+        $languageDefault = [
             'en_US' => ['name' => 'English (US)', 'flag' => 'us.webp'],
             'it_IT' => ['name' => 'Italian', 'flag' => 'it.webp'],
             'nb_NO' => ['name' => 'Norwegian', 'flag' => 'no.webp'],
@@ -91,7 +91,20 @@ class StoreViewList extends \Magento\Config\Block\System\Config\Form\Field
             'de_CH' => ['name' => 'German (Switzerland)', 'flag' => 'ch.webp'],
             'sv_SE' => ['name' => 'Swedish', 'flag' => 'se.webp'],
         ];
+        
+        $languageListJson = $this->scopeConfig->getValue('languages/translation_list/list');
+        $filteredLanguages = [];
+        if($languageListJson) {
+            $languageList = json_decode($languageListJson, true);
+            foreach ($languageList as $languageCode) {
+                if (isset($languageDefault[$languageCode])) {
+                    $filteredLanguages[$languageCode] = $languageDefault[$languageCode];
+                } else {
+                    $filteredLanguages[$languageCode] = ['name' => $languageCode, 'flag' => 'default.webp'];
+                }
+            }
+        }
 
-        return $languages;
+        return $filteredLanguages;
     }
 }

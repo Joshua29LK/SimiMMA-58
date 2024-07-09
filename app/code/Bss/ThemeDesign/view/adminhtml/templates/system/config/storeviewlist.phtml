@@ -59,22 +59,33 @@
 <script>
     require(['jquery'], function($) {
         $(document).ready(function() {
-            $('.section-config').hide();
-            $('.section-config').first().show();
-            $('.section-config').last().show();
+            function getQueryParameter(name) {
+                var urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(name);
+            }
+            
+            var currentLanguage = getQueryParameter('language');
+            if (currentLanguage) {
+                $('.language-item[data-language-code="' + currentLanguage + '"]').css('border-color', '#eb5202');
+            } else {
+                $('#languages_translation_list').closest('.section-config').hide();
+            }
             $('.language-item').click(function() {
-                $('.language-item').css('border-color', 'initial');
-                $(this).css('border-color', '#eb5202');
                 var languageCode = $(this).data('language-code');
-                var translationId = 'languages_translation_list_' + languageCode;
-
-                $('.section-config').hide();
-                $('.section-config').first().show();
-                $('.section-config').last().show();
-                
-                $('#' + translationId).show();
-                $('#' + translationId).closest('.section-config').addClass('active').show();
+                var currentUrl = window.location.href;
+                var newUrl = updateQueryStringParameter(currentUrl, 'language', languageCode);
+                window.location.href = newUrl;
             });
+
+            function updateQueryStringParameter(uri, key, value) {
+                var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+                var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+                if (uri.match(re)) {
+                    return uri.replace(re, '$1' + key + "=" + value + '$2');
+                } else {
+                    return uri + separator + key + "=" + value;
+                }
+            }
         });
     });
 </script>
