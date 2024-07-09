@@ -95,7 +95,11 @@ class JsonFileType extends \Magento\Config\Model\Config\Backend\File
             
             if ($currentValue) {
                 $newValue = json_decode($currentValue, true);
-                $newValue = array_merge($newValue, $formattedData);
+                if (is_array($newValue) && is_array($formattedData)) {
+                    $newValue = array_merge($newValue, $formattedData);
+                } else {
+                    $newValue = $formattedData;
+                }
                 $uniqueValues = [];
                 $uniqueKeys = [];
                 foreach ($newValue as $key => $item) {
